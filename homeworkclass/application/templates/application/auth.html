@@ -1,0 +1,48 @@
+{% load static %}
+
+<div id="loginDiv" class="col-span-1 row-span-3">
+<form action="" method="POST"> <!--  Login form  -->
+<div class="p-3 text-3xl flex flex-col justify-center items-center bg-linear-to-br from-violet-800 via-violet-800 to-indigo-900 text-white shadow-2xl rounded-2xl">
+{% csrf_token %}
+<p class="text-2xl font-semibold p-3 mb-2">Log In</p>
+
+<p class="text-xl mb-2">Username</p>
+<input type="text" name="username" class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border h-1/4 w-3/4 text-slate-900 dark:text-slate-200" required></input>
+<p class="mt-3 mb-2 text-xl">Password</p>
+<input type="password" name="password" class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border h-fit w-3/4 text-slate-900 dark:text-slate-200" required></input>
+<p class="mt-5 text-base">You don't have an account - <a class="cursor-pointer" hx-get="{% url 'auth' %}" hx-get="#registerDiv" hx-select="#registerDiv" hx-target="#right_div" hx-push-url="true" hx-swap="transition:true">Register Here</a></p>
+
+<p class="mt-5 text-base">{{form.errors}}</p>
+
+<button class="mt-5 px-6 p-1 mb-3 text-xl cursor-pointer hover:-translate-y-1 bg-linear-to-br from-white via-white to-white/70 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800/70 shadow-violet-900/40 text-zinc-700 dark:text-slate-200 transition-all duration-500 delay-75 ease-out rounded-xl border border-white/10 dark:border-slate-700/50" type="submit" value="login_submit" name="login" hx-swap="#loginDiv" hx-push-url="true" hx-target="#loginDiv" hx-post="{% url 'auth' %}" hs>SUBMIT</button>
+</div>
+</form>
+</div>
+</div>
+
+<div id="registerDiv" class="col-span-1 row-span-3">
+<form action="" method="POST"> <!--  Register form  -->
+<div class="p-3 text-3xl flex flex-col justify-center items-center bg-linear-to-br from-violet-800 via-violet-800 to-indigo-900 text-white shadow-2xl rounded-2xl">
+    {% csrf_token %}
+    <p class="text-2xl font-semibold p-3 mb-2">Register</p>
+    <p class="text-xl">Username</p>
+     <p class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border h-1/4 w-3/4 text-slate-900 dark:text-slate-200">{{form.username}}</p>
+
+     <p class="text-xl mt-2">Name</p>
+     <p class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border h-1/4 w-3/4 text-slate-900 dark:text-slate-200">{{form.first_name}}</p>
+
+     <p class="text-xl mt-2 ">Last Name</p>
+     <p class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border h-1/4 w-3/4 text-slate-900 dark:text-slate-200">{{form.last_name}}</p>
+
+     <p class="text-xl mt-2 ">Password</p>
+     <p class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border h-1/4 w-3/4 text-slate-900 dark:text-slate-200">{{form.password1}}</p>
+
+      <p class="text-xl mt-2">Repeat Password</p>
+     <p class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border h-1/4 w-3/4 text-slate-900 dark:text-slate-200">{{form.password2}}</p>
+
+    <p class="mt-5 text-base">You already have an account - <a class="cursor-pointer" hx-get="{% url 'auth' %}" hx-get="#registerDiv" hx-select="#loginDiv" hx-target="#right_div" hx-push-url="true" hx-swap="transition:true">Log In Here</a></p>
+    <button class="mt-5 px-6 p-1 mb-3 text-xl cursor-pointer hover:-translate-y-1 bg-linear-to-br from-white via-white to-white/70 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800/70 shadow-violet-900/40 text-zinc-700 dark:text-slate-200 transition-all duration-500 delay-75 ease-out rounded-xl border border-white/10 dark:border-slate-700/50" type="submit" value="regiset_submit" name="register" hx-swap="outerHTML" hx-target="#registerDiv" hx-push-url="true" hx-post="{% url 'auth' %}">SUBMIT</button>
+    {{form.errors}}
+</div>
+</form>
+<div>

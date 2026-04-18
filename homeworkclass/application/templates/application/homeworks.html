@@ -1,0 +1,150 @@
+{% include "application/base.html" %}
+
+{% block content %}
+
+<div class="grid grid-rows-4 grid-cols-10 min-h-0 h-full">   
+
+<div class="row-span-4 col-span-7 p-3 m-6 overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/60 dark:shadow-slate-950/80 hover:-translate-y-1 hover:shadow-2xl transition-all duration-500 delay-75 ease-out">
+<p class="text-xl opacity-75 font-semibold tracking-wider text-center mb-5 text-white">{{class_name.name}}</p>
+
+{% if user_type == "Student" %}
+
+{% if locked_value %}
+<p class="text-xl opacity-75 font-semibold tracking-wider text-center mb-5 text-white">This Class has been locked by your teacher.</p>
+
+{% endif %}
+
+{% for i in assigments %}
+
+<p class="border-l-3 border-emerald-400 pl-3 p-1 mb-2">{{i.teacher.name}} {{i.teacher.surname}} created an assignmet.</p>
+
+<div class="bg-slate-300 dark:bg-slate-800 p-3 mb-3 rounded-lg py-5 relative mx-10 flex items-stretch">
+
+<a hx-trigger="click" hx-swap="transition:true" hx-select="#student_submit_div" hx-target="#assignment_homworks_div" hx-get="{% url 'homework' class_id i.id %}" class="cursor-pointer absolute top-2 right-1.5 w-fit h-fit hover:-translate-y-0.5 duration-300 delay-75 ease-out"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+</svg>
+</a>
+<p class="absolute text-base top-3 left-1/10" >Due to {{i.time_to_end}}</p>
+
+<a  hx-trigger="click" hx-swap="transition:true" hx-select="#student_submit_div" hx-target="#assignment_homworks_div" hx-get="{% url 'homework' class_id i.id %}">
+<p class="cursor-pointer absolute text-2xl bottom-5 left-1/10" >{{i.name}}</p>
+</a>
+
+<a  hx-trigger="click" hx-swap="transition:true" hx-select="#student_submit_div" hx-target="#assignment_homworks_div" hx-get="{% url 'homework' class_id i.id %}">
+<p class="cursor-pointer absolute opacity-80 text-lg bottom-5 left-3/10" >{{i.description|truncatechars:90}}</p>
+</a>
+
+<a hx-trigger="click" hx-swap="transition:true" hx-select="#student_submit_div" hx-target="#assignment_homworks_div" hx-get="{% url 'homework' class_id i.id %}">
+<div class="cursor-pointer hover:-translate-y-0.5 duration-300 delay-75 ease-out dark:bg-slate-700 bg-slate-400 text-white/90 p-3 w-fit h-fit rounded-md"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+</svg>
+</div>
+</a>
+
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+{% for i in assigments %}
+
+<p class="border-l-3 border-emerald-400 pl-3 p-1 mb-2">{{i.teacher.name}} {{i.teacher.surname}} created an assignmet.</p>
+
+<div class="bg-slate-300 dark:bg-slate-800 p-3 mb-3 rounded-lg py-5 relative mx-10 flex items-stretch">
+
+<a href="{% url 'grade_homework' class_id i.id %}" class="cursor-pointer absolute top-2 right-1.5 w-fit h-fit hover:-translate-y-0.5 duration-300 delay-75 ease-out"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+</svg>
+</a>
+<p class="absolute text-base top-3 left-1/10" >Due to {{i.time_to_end}}</p>
+
+<a  href="{% url 'grade_homework' class_id i.id %}">
+<p class="absolute text-2xl bottom-5 left-1/10" >{{i.name}}</p>
+</a>
+
+<a  href="{% url 'grade_homework' class_id i.id %}">
+<p class="absolute opacity-80 text-lg bottom-5 left-3/10" >{{i.description|truncatechars:90}}</p>
+</a>
+
+<a  href="{% url 'grade_homework' class_id i.id %}">
+<div class="hover:-translate-y-0.5 duration-300 delay-75 ease-out dark:bg-slate-700 bg-slate-400 text-white/90 p-3 w-fit h-fit rounded-md"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+</svg>
+</div>
+</a>
+
+
+</div>
+
+
+{% endfor %}
+
+{% endif %}
+
+</div>
+
+<div id="assignment_homworks_div" class="col-span-3 row-span-4 hover:-translate-y-0.5 duration-500 delay-75 bg-linear-to-br from-violet-800 via-violet-800 to-indigo-900 text-white p-3 mt-6 mb-6 mr-6 rounded-2xl">
+
+{% if user_type == "Teacher" %}
+
+{% if class_owner %}
+
+<div class="cursor-pointer flex justify-end items-end w-fit h-fit ml-auto hover:rotate-45 duration-300 delay-75 transition-all"  hx-swap="outerHTML transition:true" hx-get="{% url 'owner_options' class_id %}" hx-select="#owner_options"  hx-target="#assignment_homworks_div" hx-trigger="click">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+  <path fill-rule="evenodd" d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 0 0 2.28-.819l.923-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 0 0 0-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 0 0-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 0 0-1.85-1.567h-1.843ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z" clip-rule="evenodd" />
+</svg>
+</div>
+
+{% endif %}
+
+{% if locked_value %}
+    <p class="text-2xl font-semibold tracking-wider text-center mt-5 mb-2 text-white">This Class is Locked</p>
+
+{% else %}
+
+
+    <form action="" method="POST" class="items-center justify-center flex flex-col pl-3 pr-3">
+        {% csrf_token %}
+            <p class="text-2xl text-center mb-2 text-white">Create Assignment</p>
+
+            <p class="text-xl text-center mb-2 text-white">Name</p>
+                 <p class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border  text-slate-900 dark:text-slate-200">{{form.name}}</p>
+
+ 
+            <p class="text-xl text-center mb-2 mt-2 text-white">Description</p>
+           
+            <p class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl pl-1 pt-1 pr-1 text-base border  text-slate-900 dark:text-slate-200">{{form.description}}</p>
+
+
+            <p class="text-xl text-center mb-2 mt-3 text-white">Deadline</p>
+                 <p class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-xl border h-1/4  text-slate-900 dark:text-slate-200">{{form.time_to_end}}</p>
+
+            <p class="text-xl text-center mb-2 mt-3 text-white">Allow Late Uploads: {{form.upload_after_time}}</p>
+
+            <p class="flex items-center text-xl text-center mb-2 text-white ">Grade Importance: {{form.grade_importance}}</p>
+
+
+            <button type="submit" class="mt-3 px-6 p-1  text-2xl cursor-pointer hover:-translate-y-1 bg-linear-to-br from-white via-white to-white/70 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800/70 shadow-violet-900/40 text-zinc-700 dark:text-slate-200 transition-all duration-500 delay-75 ease-out rounded-xl border border-white/10 dark:border-slate-700/50" name="add_assignment" value="add_assignment">Submit</button>
+    </form>
+
+
+
+{% endif %}
+
+{% else %}
+
+<div class="bg-violet-700/20 shadow-lg shadow-violet-950/50 text-slate-900 flex justify-center items-center flex-col  align-middle p-3 rounded-2xl mt-3">
+<p class="text-2xl text-center mb-2 text-white opacity-70">STATS</p>
+<p class="text-xl text-center p-1 mb-2 text-white">Course GPA: {% if student_gpa == 0.0 %} - {% else %} {{student_gpa}} {% endif %}</p>
+<p class="text-xl text-center mb-2 text-white">Pending Assignments: {{pending_assignments}}</p>
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+{% endblock %}

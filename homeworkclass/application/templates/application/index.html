@@ -1,0 +1,203 @@
+{% include "application/base.html" %}
+
+{% block content %}
+<div class="p-6 grid grid-rows-4 min-h-0 flex-1 grid-cols-1 gap-6 w-full md:grid-cols-4 text-zinc-800 dark:text-slate-200">
+
+<div class="p-5 col-span-3 gap-6 flex flex-1 row-span-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/60 dark:shadow-slate-950/80 hover:-translate-y-1 hover:shadow-2xl transition-all duration-500 delay-75 ease-out">
+
+<div class="p-6 w-1/4 flex flex-col border-violet-200 dark:border-violet-800/50 rounded-2xl border text-center">
+
+<div class="rounded-lg p-3 flex flex-col">
+
+    <p class="flex justify-center tracking-widest text-sm opacity-70 gap-1 mb-2">TECH STACK <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+</svg>
+</p>
+    <div class="flex flex-wrap justify-center">
+        <span class="m-1 inline-block bg-blue-50 dark:bg-blue-900/30 px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider text-blue-600 dark:text-blue-400 border border-blue-200/50 dark:border-blue-800/50 shadow-sm">
+            Python
+        </span>
+
+        <span class="m-1 inline-block bg-emerald-50 dark:bg-emerald-900/30 px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider text-emerald-600 dark:text-emerald-400 border border-emerald-200/50 dark:border-emerald-800/50 shadow-sm">
+            Django
+        </span>
+
+        <span class="m-1 inline-block bg-indigo-50 dark:bg-indigo-900/30 px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider text-indigo-600 dark:text-indigo-400 border border-indigo-200/50 dark:border-indigo-800/50 shadow-sm">
+            PostgreSQL ORM
+        </span>
+
+        <span class="m-1 inline-block bg-cyan-50 dark:bg-cyan-900/30 px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider text-cyan-600 dark:text-cyan-400 border border-cyan-200/50 dark:border-cyan-800/50 shadow-sm">
+            Tailwind CSS
+        </span>
+
+         <span class="m-1 inline-block bg-zinc-50 dark:bg-zinc-900/30 px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-800/50 shadow-sm">
+            Railway
+        </span>
+
+        <span class="m-1 inline-block bg-amber-50 dark:bg-amber-900/30 px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider text-amber-600 dark:text-amber-400 border border-amber-200/50 dark:border-amber-800/50 shadow-sm">
+            Cloudinary
+        </span>
+
+    </div>
+
+</div>
+
+<div class="rounded-lg p-3 mt-3 flex flex-col">
+
+    <p class="flex justify-center tracking-widest text-sm opacity-70 gap-1 mt-2 mb">FUNCTIONALITY</p>
+    
+    <div class="flex justify-center flex-col">
+        <p class="p-1 mt-1 opacity-80  hover:-translate-y-0.5 duration-300 transition-all cursor-default delay-75 ease-out rounded-xl">Simple User Authentication</p>
+        <p class="p-1 mt-1 opacity-80 hover:-translate-y-0.5 duration-300 transition-all cursor-default delay-75 ease-out rounded-xl">Teacher CRUD for Classes and Assigments</p>
+        <p class="p-1 mt-1 opacity-80  hover:-translate-y-0.5 duration-300 transition-all cursor-default delay-75 ease-out rounded-xl">Teacher and Student Info Dashboard</p>
+    </div>
+
+</div>
+
+<div class="rounded-lg mt-3 flex flex-col items-center justify-center p-3 ">
+
+    <p class="flex justify-center tracking-widest text-sm opacity-70 gap-1 mb-3">STATUS<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+  <path fill-rule="evenodd" d="M14.5 10a4.5 4.5 0 0 0 4.284-5.882c-.105-.324-.51-.391-.752-.15L15.34 6.66a.454.454 0 0 1-.493.11 3.01 3.01 0 0 1-1.618-1.616.455.455 0 0 1 .11-.494l2.694-2.692c.24-.241.174-.647-.15-.752a4.5 4.5 0 0 0-5.873 4.575c.055.873-.128 1.808-.8 2.368l-7.23 6.024a2.724 2.724 0 1 0 3.837 3.837l6.024-7.23c.56-.672 1.495-.855 2.368-.8.096.007.193.01.291.01ZM5 16a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd" />
+  <path d="M14.5 11.5c.173 0 .345-.007.514-.022l3.754 3.754a2.5 2.5 0 0 1-3.536 3.536l-4.41-4.41 2.172-2.607c.052-.063.147-.138.342-.196.202-.06.469-.087.777-.067.128.008.257.012.387.012ZM6 4.586l2.33 2.33a.452.452 0 0 1-.08.09L6.8 8.214 4.586 6H3.309a.5.5 0 0 1-.447-.276l-1.7-3.402a.5.5 0 0 1 .093-.577l.49-.49a.5.5 0 0 1 .577-.094l3.402 1.7A.5.5 0 0 1 6 3.31v1.277Z" />
+</svg>
+</p>
+    <span class="w-fit text-amber-700 dark:text-amber-300 font-bold bg-amber-200 dark:bg-amber-900/40 opacity-80 text-xs inline-flex items-center justify-center border border-amber-300 dark:border-amber-700/50 tracking-wider rounded-full text-center px-3 py-1">
+        In Progress
+    </span>
+
+</div>
+
+</div>
+
+<div class="p-6 w-3/4 flex flex-col items-center border-violet-200 dark:border-violet-800/50 rounded-2xl border relative min-h-125">
+
+<p class="tracking-widest text-base opacity-50 dark:opacity-70">HOW IT WORKS</p>
+
+<div class="absolute left-[5%] top-[15%] flex flex-col items-center ">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-18 h-18 opacity-70 fill-sky-300 dark:fill-sky-400">
+        <path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z" />
+    </svg>
+    <span class="mt-2 text-[10px] font-bold tracking-widest text-sky-600 dark:text-sky-400 opacity-80 uppercase">Students</span>
+    
+        <div class="absolute bottom-1.25 left-17.5 border-dotted border-t-[3px] border-sky-400 dark:border-sky-500 w-26.25 -rotate-140">
+    </div>
+</div>
+
+<div class="absolute left-[5%] bottom-[15%] flex flex-col items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-18 h-18 opacity-70 fill-green-500 dark:fill-green-400">
+        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+    </svg>
+    <span class="mt-2 text-[10px] font-bold tracking-widest text-green-600 dark:text-green-400 opacity-80 uppercase">Teacher</span>
+    
+    <div class="absolute bottom-30 left-12.5 border-dotted border-t-[3px] border-green-400 dark:border-green-500 w-26.25 -rotate-40">
+    </div>
+</div>
+
+<div class="absolute left-[25%] top-[48%] -translate-y-1/2 flex flex-col items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-18 h-18 fill-amber-400 dark:fill-amber-500 opacity-90">
+        <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z" clip-rule="evenodd" />
+    </svg>
+    <span class="mt-2 text-[10px] font-bold tracking-widest text-amber-600 dark:text-amber-400 opacity-80 uppercase">AUTHORIZATION</span>
+
+        <div class="absolute -bottom-1.5 left-21.25 border-dashed border-t-[3px] border-amber-400 dark:border-amber-400 w-26.25 -rotate-140">
+    </div>
+
+</div>
+
+<div class="absolute left-[50%] top-[25%] flex flex-col items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-16 h-16 fill-sky-300 dark:fill-sky-400 opacity-70">
+        <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625Z" />
+        <path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
+    </svg>
+    <span class="mt-2 text-[10px] font-bold tracking-widest text-sky-600 dark:text-sky-400 opacity-80 uppercase">ASSIGNMENT</span>
+        <div class="absolute bottom-15.5 left-24 border-dashed border-t-[3px] border-sky-400 dark:border-sky-500 w-26.25 rotate-0">
+    </div>
+    
+</div>
+
+<div class="absolute left-[50%] bottom-[20%] flex flex-col items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-18 h-18 fill-fuchsia-300 dark:fill-fuchsia-400 opacity-70">
+        <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
+        <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 .634-.74A49.109 49.109 0 0 1 12 9c2.59 0 5.134.202 7.616.592a.75.75 0 0 1 .634.74Zm-7.5 2.418a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Zm3-.75a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0v-6.75a.75.75 0 0 1 .75-.75ZM9 12.75a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Z" clip-rule="evenodd" />
+        <path d="M12 7.875a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" />
+    </svg>
+    <span class="mt-2 text-[10px] font-bold tracking-widest text-fuchsia-600 dark:text-fuchsia-400 opacity-80 uppercase">DASHBOARD</span>
+            <div class="absolute bottom-40 -left-4.75 border-dotted border-t-[3px] border-sky-400 dark:border-sky-500 w-26.25 -rotate-90">
+    </div>
+</div>
+
+<div class="absolute left-[80%] top-[25%] flex flex-col items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-16 h-16 fill-sky-400 dark:fill-sky-500 opacity-70">
+        <path fill-rule="evenodd" d="M4.5 9.75a6 6 0 0 1 11.573-2.226 3.75 3.75 0 0 1 4.133 4.303A4.5 4.5 0 0 1 18 20.25H6.75a5.25 5.25 0 0 1-2.23-10.004 6.072 6.072 0 0 1-.02-.496Z" clip-rule="evenodd" />
+    </svg>
+    <span class="mt-2 text-[10px] font-bold tracking-widest text-sky-600 dark:text-sky-400 opacity-80 uppercase">CLOUD</span>
+            <div class="absolute top-36.5 -left-4.75 border-dashed border-t-[3px] border-sky-400 dark:border-sky-500 w-26.25 -rotate-90">
+    </div>
+</div>
+
+<div class="absolute left-[80%] bottom-[20%] flex flex-col items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-16 h-16 fill-green-400 dark:fill-green-500 opacity-70">
+        <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />
+    </svg>
+    <span class="mt-2 text-[10px] font-bold tracking-widest text-green-600 dark:text-green-400 opacity-80 uppercase">GRADING</span>
+            <div class="absolute bottom-15.5 right-22.5 border-dotted border-t-[3px] border-green-400 dark:border-green-400 w-26.25 rotate-0">
+    </div>
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<div style="display: contents;" id="right_div">
+
+
+<div class="p-5 h-full justify-between col-span-1 row-span-3 rounded-2xl bg-linear-to-br from-violet-800 via-violet-800 to-indigo-900 text-white shadow-2xl shadow-violet-900/20 dark:shadow-slate-900/60 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-2xl transition-all duration-500 delay-75 ease-out">
+        <div class="h-full text-center text-2xl flex-col items-center justify-between flex">
+
+        <p class="tracking-widest text-base opacity-70">GET STARTED</p>
+        <p class="tracking-widest text-lg">and learn</p>
+        <p class="overflow-hidden opacity-15"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-32">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+</svg>
+</p>
+        <div class="flex flex-col items-center">
+            <a class="py-3 px-6 hover:-translate-y-1 bg-linear-to-br from-white via-white to-white/70 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800/70 shadow-violet-900/40 text-zinc-700 dark:text-slate-200 transition-all duration-500 delay-75 ease-out rounded-2xl border border-white/10 dark:border-slate-700/50 cursor-pointer" hx-get="{% url 'auth' %}" hx-select="#registerDiv" hx-swap="transition:true" hx-target="#right_div"> Join Class </a>
+            <a class="duration-500 delay-75 ease-out bg-linear-to-br from-violet-700 via-violet-700 to-indigo-600 dark:from-violet-600 dark:via-violet-600 dark:to-indigo-500 hover:-translate-y-1 rounded-2xl px-6 py-3 mt-3 border border-transparent dark:border-violet-500/30 cursor-pointer" hx-get="{% url 'auth' %}" hx-select="#loginDiv" hx-swap="transition:true" hx-target="#right_div">Log in</a>
+        </div>
+    </div>
+</div>
+
+
+<div style="display: contents;" id="bottom_div" hx-swap-oob="true">
+<div class="p-3 col-span-1 row-span-1 rounded-2xl bg-linear-to-br from-sky-100 via-sky-100 to-sky-200 dark:from-sky-900/40
+ dark:via-sky-900/40 dark:to-sky-800/40 ring-1 ring-slate-900/5 dark:ring-white/5 hover:-translate-y-1 
+ hover:scale-[1.01] hover:shadow-2xl transition-all duration-500 delay-75 ease-out text-center font-bold 
+ text-lg text-sky-700 dark:text-sky-300">
+
+    <p class="justify-center mb-1">Igor Wróblewski</p>
+
+    <div class="text-base font-normal">
+
+        Applied Computer Science and <br>Finance & Accounting Student🎓
+
+    </div>
+
+    <div class="flex gap-4 mt-1 justify-center items-center">
+
+   <a class="opacity-50 hover:opacity-100 hover:scale-105 transition-all duration-300 delay-75 fill-rose-500 dark:fill-rose-400" href="mailto:igor.wroblewski.contact@gmail.com"><svg class="w-6 h-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+   <a class="opacity-50 hover:opacity-100 hover:scale-105 transition-all duration-300 delay-75 fill-sky-900 dark:fill-sky-100" href="https://github.com/Esawer/Esawer"><svg class="w-6 h-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    
+</div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+{% endblock %}

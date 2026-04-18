@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'dist/output.css' %}">
+    <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+    <meta charset="UTF-8">
+    <title>Homework Class</title>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 dark:text-slate-200 h-screen flex flex-col" hx-history-elt>
+    
+    <header class="bg-violet-800 dark:bg-slate-900 dark:border dark:border-slate-800 text-white flex p-3  rounded-xl ml-6 mr-6 mt-6 justify-between items-center">
+          
+        <a class="border hover:-translate-y-0.5 hover:border-white/40 dark:hover:border-slate-600 duration-500 border-white/20 dark:border-slate-700 rounded-lg p-2 text-2xl tracking-tighter text-white delay-75 ease-in-out" href={% url 'home' %}>  Homework Class </a>
+        <div class="flex justify-between items-center ">
+{% if user.is_authenticated %}
+            <div class="p-2 flex items-center gap-1.5 border border-white/20 dark:border-slate-700 rounded-lg">
+        <p>{{user.first_name}} {{user.last_name}}</p>
+
+{% if user.userclass.user_type == "Teacher" %}
+
+        <a class="text-2xl text-green-300 dark:text-green-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+        </svg></a>
+        <p class="font-semibold tracking-wider text-green-300 dark:text-green-400">TEACHER</p>
+
+{% else %}
+
+        <a class="text-2xl text-sky-300 dark:text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+        </svg></a>
+        <p class="font-semibold tracking-wider text-sky-300 dark:text-sky-400">STUDENT</p>
+
+{% endif %}
+
+        </div>
+
+
+            <a class="hover:text-sky-300 dark:hover:text-sky-300 hover:border-white/30 dark:hover:border-slate-600 hover:-translate-y-0.5  transition-all hover:opacity-100 opacity-80 p-2 ml-3 flex items-center border border-white/20 dark:border-slate-700 rounded-lg  text-sky-500 dark:text-sky-400 duration-400 delay-75 ease-in-out" href={% url 'logout' %}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+  <path d="M18 1.5c2.9 0 5.25 2.35 5.25 5.25v3.75a.75.75 0 0 1-1.5 0V6.75a3.75 3.75 0 1 0-7.5 0v3a3 3 0 0 1 3 3v6.75a3 3 0 0 1-3 3H3.75a3 3 0 0 1-3-3v-6.75a3 3 0 0 1 3-3h9v-3c0-2.9 2.35-5.25 5.25-5.25Z" />
+</svg></a>
+
+    </div>
+{% else %}
+<a class="p-2 border  hover:border-white/30 dark:hover:border-slate-600 border-white/20 dark:border-slate-700 rounded-lg text-2xl hover:-translate-y-0.5  transition-all  hover:text-sky-300 dark:hover:text-sky-300 hover:opacity-100 opacity-80  text-sky-500 dark:text-sky-400  duration-500  delay-75 ease-in-out cursor-pointer" hx-push-url="true" hx-get="{% url 'auth' %}" hx-select="#loginDiv" hx-swap="transition:true" hx-target="#right_div"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+  <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z" clip-rule="evenodd" />
+</svg>
+</a>
+
+
+
+            {% endif %}
+
+    </div> 
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

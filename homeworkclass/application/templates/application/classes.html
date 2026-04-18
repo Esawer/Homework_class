@@ -1,0 +1,85 @@
+{% include "application/base.html" %}
+
+{% block content %}
+
+<div class="grid grid-cols-5 grid-rows-4 min-h-0 h-full">
+
+<div class="row-span-4 col-span-4 p-3 m-6 overflow-y-auto rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/60 dark:shadow-slate-950/80 hover:-translate-y-1 hover:shadow-2xl transition-all duration-500 delay-75 ease-out">
+
+<div class="grid  grid-cols-4 gap-4">
+
+{% for i in classes %}
+
+<div class=" col-span-1 p-3 border-slate-200 flex bg-slate-100 dark:bg-slate-800 dark:border-slate-900 py-3 w-full rounded-xl border relative">
+<a class="w-fit "href="{% url 'homeworks' i.id %}"><div class="text-slate-900 hover:-translate-y-0.5 duration-300 delay-75  text-2xl font-semibold rounded-md {% cycle 'bg-red-400' 'bg-emerald-400' 'bg-sky-400' 'bg-violet-400' 'bg-fuchsia-400' %} items-center justify-center flex p-6 w-20 h-20">{{i.name|slice:":2"}}</div></a>
+<p class="ml-3 mt-2.5 text-lg cursor-default ">{{i.name|truncatechars:30}}</p>
+<div class="absolute bottom-2 right-2 opacity-60 text-slate-900 dark:text-slate-100">{{i.class_code}}</div>
+<a href="{% url 'homeworks' i.id %}" class="absolute top-1 right-0.5 w-fit h-fit hover:-translate-y-0.5 duration-300 delay-75 ease-out"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
+</svg>
+</a>
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<div class="col-span-1 row-span-4 hover:-translate-y-0.5 duration-500 delay-75 bg-linear-to-br from-violet-800 via-violet-800 to-indigo-900 text-white p-3 mt-6 mb-6 mr-6 rounded-2xl">
+
+{% if user_type == "Teacher" %}
+
+<div class="bg-violet-700/20 shadow-lg shadow-violet-950/50 text-slate-900 flex justify-center items-center flex-col  align-middle p-3 rounded-2xl mt-3">
+<p class="text-xl text-center mb-2 text-white opacity-70">STATS</p>
+<p class="text-xl text-center mb-2 text-white">Current Classes: {{classes.count}}</p>
+<p class="text-xl text-center mb-2 text-white">Number of Students: {{num_of_students}}</p>
+<p class="text-xl text-center mb-2 text-white">Assignments to Grade: {{grade_assignments}}</p>
+</div>
+
+<div class="bg-violet-700/20 shadow-lg shadow-violet-950/50 text-slate-900 flex justify-center items-center flex-col  align-middle p-3 rounded-2xl mt-5">
+
+    <form action="" method="POST" class="items-center justify-center flex flex-col pl-3 pr-3">
+        {% csrf_token %}
+        <p class="text-xl text-center mb-2 text-white">Create Class</p>
+    <p class="text-base text-center mb-1  text-white">Class Name</p>
+        <input class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-base border h-fit w-9/10 text-slate-900 dark:text-slate-200"  type="text" name="class_name" required>
+
+         <button type="submit" name="create_class" class="mt-3 px-6 p-1  text-xl cursor-pointer hover:-translate-y-1 bg-linear-to-br from-white via-white to-white/70 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800/70 shadow-violet-900/40 text-zinc-700 dark:text-slate-200 transition-all duration-500 delay-75 ease-out rounded-xl border border-white/10 dark:border-slate-700/50">SUBMIT</button>
+
+        
+    </input>
+    </form>
+</div>
+{% else %}
+
+<div class="bg-violet-700/20 shadow-lg shadow-violet-950/50 text-slate-900 flex justify-center items-center flex-col  align-middle p-3 rounded-2xl mt-3">
+<p class="text-xl text-center mb-2 text-white opacity-70">STATS</p>
+<p class="text-xl text-center p-1 text-white">GPA: {% if student_gpa == 0.0 %} - {% else %} {{student_gpa}} {% endif %}</p>
+<p class="text-xl text-center mb-2 text-white">Current Classes: {{classes.count}}</p>
+<p class="text-xl text-center mb-2 text-white">Pending Assignments: {{pending_assignments}}</p>
+</div>
+
+{% endif %}
+
+<div class="bg-violet-700/20 shadow-lg shadow-violet-950/50 text-slate-900 flex justify-center items-center flex-col  align-middle p-3 rounded-2xl mt-5">
+
+    <form action="" method="POST" class="items-center justify-center flex flex-col pl-3 pr-3">
+        {% csrf_token %}
+        <p class="text-xl text-center mb-2 text-white">Join Class</p>
+    <p class="text-base text-center mb-1  text-white">Class Code</p>
+        <input class="bg-white dark:bg-slate-800 dark:border-slate-50 border-slate-300 rounded-xl p-2 text-base border h-fit w-9/10 text-slate-900 dark:text-slate-200" type="text" name="class_code" required>
+            
+    </input>
+    <button type="submit" name="join_class" class="mt-3 px-6 p-1  text-xl cursor-pointer hover:-translate-y-1 bg-linear-to-br from-white via-white to-white/70 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800/70 shadow-violet-900/40 text-zinc-700 dark:text-slate-200 transition-all duration-500 delay-75 ease-out rounded-xl border border-white/10 dark:border-slate-700/50">SUBMIT</button>
+    </form>
+
+<div class="border justify-end items-center p-3 mt-5 hidden">
+
+</div>
+</div>
+
+</div>
+</div>
+
+{% endblock %}
