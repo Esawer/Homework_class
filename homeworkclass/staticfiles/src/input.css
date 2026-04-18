@@ -1,8 +1,0 @@
-@import "tailwindcss";
-
-/* If Tailwind isn't automatically finding your Django templates, 
-   you can explicitly tell it where to look using the @source directive: */
-@source "../../application/templates";
-@source "../../application/**/*.html";
-@source "../../templates/**/*.html";
-@source "../templates/**/*.html";
