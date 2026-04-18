@@ -28,7 +28,7 @@ Asystowała mi przy tworzeniu projektu - w tym hostingu.
 [Homework class](https://homeworkclass.up.railway.app/)
 
 **Jak to Działa:**
-![Jak to Działa](image-1.png)
+<img width="952" height="678" alt="image" src="https://github.com/user-attachments/assets/44cbc7fa-81ed-41a9-bca7-3ae7e81dbea8" />
 
 ### 🚀 Project Roadmap
 - [x] Backend (Klasy Bazy Danych, Podstawowa Logika, CRUD)
@@ -87,7 +87,7 @@ It assisted me during the creation of this project - hosting included.
 [Homework class](https://homeworkclass.up.railway.app/)
 
 **How it Works:**
-![How it Works](image.png)
+<img width="952" height="678" alt="image" src="https://github.com/user-attachments/assets/d681c883-f554-41c7-9958-3a79defc3120" />
 
 ### 🚀 Project Roadmap
 - [x] Backend Logic (Db Classes, Basic Logic and CRUD)
