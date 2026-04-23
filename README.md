@@ -26,6 +26,9 @@ Asystowała mi przy tworzeniu projektu - w tym hostingu.
 
 **Spróbuj sam:**
 [Homework class](https://homeworkclass.up.railway.app/)
+Przykładowe Konto Nauczyciela:
+login: Prof
+hasło: ToJestNauczyciel
 
 **Jak to Działa:**
 <img width="952" height="678" alt="image" src="https://github.com/user-attachments/assets/44cbc7fa-81ed-41a9-bca7-3ae7e81dbea8" />
@@ -85,6 +88,9 @@ It assisted me during the creation of this project - hosting included.
 
 **Try for yourself:** 
 [Homework class](https://homeworkclass.up.railway.app/)
+Sample Teacher's Account:
+login: Prof
+password: ToJestNauczyciel
 
 **How it Works:**
 <img width="952" height="678" alt="image" src="https://github.com/user-attachments/assets/d681c883-f554-41c7-9958-3a79defc3120" />
